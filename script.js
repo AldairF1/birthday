@@ -100,6 +100,6 @@ gif.addEventListener('click', ()=> {
     contador.textContent = `Pellizcar al gato: ${contarClick}/${maxClick}`;
     if(contarClick >= maxClick){
         alert('¡Felicidades! Me has pellizcado 5 veces 😼');
-        window.location.href = '/lámpara con mensaje/light reveal txt.html'
+        window.location.href = '/lampara-con-mensaje/luz-reveladora.html'
     }
 })
