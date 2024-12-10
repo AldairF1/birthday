@@ -11,6 +11,10 @@ body{
     display: grid;
     gap: 1rem;
     align-items: center;
+    cursor: url(imágenes/cursor.png) 10 10, auto;
+}
+body:active {
+    cursor: url(imágenes/cursor-active.png) 10 10, auto;
 }
 
 h1{
@@ -18,7 +22,7 @@ h1{
     color: hsl(0, 0%, 100%);
     text-align: center;
     >span:last-of-type{
-        color: hsl(96, 100%, 49%);
+        color: hsl(280, 100%, 50%);
     }
 }
 
@@ -74,4 +78,40 @@ h1{
         }
     }
     
+}
+
+/* Contador */
+
+.contador {
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    font-size: 20px;
+    color: hsl(182, 100%, 50%);
+    font-family: Cooper, Arial, Helvetica, sans-serif;
+    font-weight: bold;
+    background-color: hsla(280, 100%, 26%, 0.212);
+    padding: 10px;
+    border-radius: 8px;
+    border: solid 2px hsl(280, 100%, 50%);
+}
+
+/* Gif aleatorio */
+
+.gif {
+    position: absolute;
+    width: 100px;
+    height: 100px;
+    transition: transform 0.2s ease;
+    border-radius: 10px;
+    object-fit: cover;
+}
+
+.gif:active {
+    transform: scale(1.8);
+    content: url(https://i.gifer.com/v5T.gif);
+}
+
+.gif:hover {
+    content: url(https://hips.hearstapps.com/hmg-prod/images/gato-dice-no-1550658205.gif);
 }
