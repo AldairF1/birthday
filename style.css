@@ -108,7 +108,7 @@ h1{
 }
 
 .gif:active {
-    transform: scale(1.8);
+    transform: scale(0.8);
     content: url(https://i.gifer.com/v5T.gif);
 }
 

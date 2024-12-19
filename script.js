@@ -51,14 +51,12 @@ seconds = seconds-(days*24*60*60)-(hours*60*60)-(minutes*60);
 Object.entries({days,hours,minutes,seconds}).forEach(([key,value])=>{
     const remaining = parts[key].element.querySelector(".number");
     const text = parts[key].element.querySelector(".text");
-    // remaining.innerText = value;
-    remaining.innerText = 0;
+    remaining.innerText = value;
     text.innerText= parts[key].text[Number(value==1)]
     const dots = parts[key].element.querySelectorAll(".dot")
     dots.forEach((dot,idx)=>{
-        // dot.dataset.active = idx <= value;
-        // dot.dataset.lastactive = idx == value;
-        dot.dataset.lastactive = idx == 0;
+        dot.dataset.active = idx <= value;
+        dot.dataset.lastactive = idx == value;
     })
 })
 if(now <= target){
@@ -113,8 +111,8 @@ var w = c.width = window.innerWidth,
 		h = c.height = window.innerHeight,
 		ctx = c.getContext( '2d' ),
 		
-		hw = w / 2, // half-width
-		hh = h / 2,
+		hw = w / 2 - 25, // half-width
+		hh = h / 2 - 10,
 		
 		opts = {
 			strings: [ '¡HAPPY', 'BIRTHDAY', 'MY LOVE ✨!'],
@@ -146,7 +144,7 @@ var w = c.width = window.innerWidth,
 			fireworkShardAddedSize: 3,
 			gravity: .1,
 			upFlow: -.1,
-			letterContemplatingWaitTime: 1000, //360
+			letterContemplatingWaitTime: 360, //
 			balloonSpawnTime: 20,
 			balloonBaseInflateTime: 10,
 			balloonAddedInflateTime: 10,
@@ -486,9 +484,9 @@ function anim(){
 	
 	ctx.translate( -hw, -hh );
 	
-	// if( done )
-	// 	for( var l = 0; l < letters.length; ++l )
-	// 		letters[ l ].reset();
+	if( done )
+		for( var l = 0; l < letters.length; ++l )
+			letters[ l ].reset();
 }
 
 for( var i = 0; i < opts.strings.length; ++i ){
